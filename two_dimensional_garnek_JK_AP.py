@@ -14,9 +14,9 @@ from mpl_toolkits import mplot3d
 from IPython.display import HTML
 sp.init_printing()
 
-nx=5
-ny=2
-L = 1** -10   # w tej wersji zakładamy, że Lx=Ly
+nx=2
+ny=1
+L = 1   # w tej wersji zakładamy, że Lx=Ly
 x,y = np. linspace(0,L, 200), np. linspace(0,L,200)
 A=(2/L)**0.5
 
@@ -47,6 +47,7 @@ ax.set_zlabel('Z')
 plt.title(['Gestosc prawdopodobienstwa dla Nx=%d i Ny=%d' % (nx,ny)], color= 'red')
 plt.savefig( ['Gestosc prawdopodobienstwa Nx=%d i Ny=%d.png' % (nx,ny)], transparent = True)
 
+plt.close()
 ####
 
 psi_0 = np.array([psi0(x,y) for x,y in zip(np.ravel(X),np.ravel(Y))])
