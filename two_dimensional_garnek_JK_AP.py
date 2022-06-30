@@ -19,6 +19,9 @@ L = 1** -10
 x,y = np. linspace(0,L, 200), np. linspace(0,L,200)
 A=(2/L)**0.5
 
+def psi0(a,b):
+    psi0=(  np.sin(( n * np.pi * a)/L) * np.sin((n * np.pi * b)/L))
+    return psi0
 
 def psi(a,b):
     psi=(  np.sin(( n * np.pi * a)/L) * np.sin((n * np.pi * b)/L))**2
@@ -26,19 +29,35 @@ def psi(a,b):
 
 X,Y = np.meshgrid(x,y)
 
-psi1 = np.array([psi(x,y) for x,y in zip(np.ravel(X),np.ravel(Y))])
-
-PSI = psi1.reshape(X.shape)  # wiecej wartosci!
+#psi1 = np.array([psi(x,y) for x,y in zip(np.ravel(X),np.ravel(Y))])
+#
+#PSI = psi1.reshape(X.shape)  # wiecej wartosci!
 
 
 ###
-fig = plt.figure()
+#fig = plt.figure()
 
-ax=fig.add_subplot(111, projection = '3d')
-ax.plot_surface(X,Y,PSI, cmap = 'winter')
+#ax=fig.add_subplot(111, projection = '3d')
+#ax.plot_surface(X,Y,PSI, cmap = 'winter')
+
+#plt.xlabel('X')
+#plt.ylabel('Y')
+#ax.set_zlabel('Z')
+#plt.title(['Gestosc prawdopodobienstwa dla n=%d' % (n)], color= 'red')
+#plt.savefig( ['Gestosc prawdopodobienstwa n=%d.png' % (n)], transparent = True)
+
+####
+psi_0 = np.array([psi0(x,y) for x,y in zip(np.ravel(X),np.ravel(Y))])
+
+PSI_0 = psi_0.reshape(X.shape)  # wiecej wartosci!
+
+fig2 = plt.figure()
+
+ax=fig2.add_subplot(111, projection = '3d')
+ax.plot_surface(X,Y,PSI_0, cmap = 'winter')
 
 plt.xlabel('X')
 plt.ylabel('Y')
 ax.set_zlabel('Z')
-plt.title(['Gestosc prawdopodobienstwa dla n=%d' % (n)], color= 'red')
-plt.savefig( ['Gestosc prawdopodobienstwa n=%d.png' % (n)], transparent = True)
+plt.title(['Funkcja falowa dla n=%d' % (n)], color= 'blue')
+plt.savefig( ['Funkcja falowa dla n=%d' % (n)], transparent = True)
