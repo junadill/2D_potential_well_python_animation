@@ -14,9 +14,9 @@ from matplotlib.animation import FuncAnimation
 from mpl_toolkits import mplot3d
 from IPython.display import HTML
 sp.init_printing()
-nx=2
-ny=1
-L = 1   # w tej wersji zakładamy, że Lx=Ly
+nx=3
+ny=2
+L = 1 # w tej wersji zakładamy, że Lx=Ly
 x,y = np. linspace(0,L, 200), np. linspace(0,L,200)
 A=(2/L)**0.5
 def psi(a,b):
@@ -39,8 +39,11 @@ ax.plot_surface(X,Y,PSI, cmap = 'autumn')
 plt.xlabel('X')
 plt.ylabel('Y')
 ax.set_zlabel('Z')
-plt.title(['Gestosc prawdopodobienstwa dla Nx=%d i Ny=%d' % (nx,ny)], color= 'red')
-plt.savefig( ['Gestosc prawdopodobienstwa Nx=%d i Ny=%d.png' % (nx,ny)], transparent = True)
+
+figtitle = 'Gestosc prawdopodobienstwa dla Nx=%d i Ny=%d' % (nx,ny)
+
+plt.title(figtitle, color= 'orange')
+plt.savefig( figtitle, transparent = True)
 
 plt.close()
 ####
