@@ -83,3 +83,4 @@ z = PSIF(xs,ys,n1,n2,0)
 line = ax.plot_surface(xs,ys,z,cmap="autumn")
 
 ax.set_zlim(-1.5, 1.5)
+

@@ -11,8 +11,8 @@ from sympy.utilities.lambdify import lambdify
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-from mpl_toolkits import mplot3d
-from IPython.display import HTML
+
+
 sp.init_printing()
 nx=3
 ny=2

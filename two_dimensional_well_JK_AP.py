@@ -50,8 +50,10 @@ figtitle_gestosc = 'Gestosc prawdopodobienstwa dla Nx=%d i Ny=%d' % (nx,ny)
 plt.savefig( figtitle_gestosc, transparent = True)
 
 #plt.close()
-####
 
+
+
+###funkcja falowa
 psi_0 = np.array([psi0(x,y) for x,y in zip(np.ravel(X),np.ravel(Y))])
 
 PSI_0 = psi_0.reshape(X.shape)  # wiecej wartosci!
@@ -67,3 +69,7 @@ ax2.set_zlabel('Z')
 plt.title(['Funkcja falowa dla Nx=%d i Ny=%d' % (nx,ny)], color= 'blue')
 figtitle_funkcja = 'Funkcja falowa dla Nx=%d i Ny=%d' % (nx,ny)
 plt.savefig( figtitle_funkcja, transparent = True)
+
+
+
+
